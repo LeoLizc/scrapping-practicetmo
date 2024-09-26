@@ -142,6 +142,9 @@ export async function cleanAndInject(htmlString) {
   document.body.classList.add('dark-mode');
   document.querySelectorAll('nav')?.forEach(nav => nav.classList.add('navbar-dark', 'bg-dark'));
 
+  // añadir clases al main-container
+  document.querySelector('#main-container')?.classList.add('container-fluid', 'p-0')
+
   //replace next and previous anchor tags href
   const anchors = document.querySelectorAll('.chapter-arrow a');
 
