@@ -130,7 +130,51 @@ export async function cleanAndInject(htmlString) {
   const lazyLoadInitScript = document.createElement('script');
   lazyLoadInitScript.textContent = `document.addEventListener("DOMContentLoaded", function() {
     let images = document.querySelectorAll('img.viewer-img');
-    lazyload(images, {
+    root = window;
+
+    LazyLoad.prototype.init = function() {
+
+      /* Without observers load everything and bail out early. */
+      if (!root.IntersectionObserver) {
+        this.loadImages();
+        return;
+      }
+
+      let self = this;
+      let observerConfig = {
+        root: this.settings.root,
+        rootMargin: this.settings.rootMargin,
+        threshold: [this.settings.threshold]
+      };
+
+      this.observer = new IntersectionObserver(function(entries) {
+        Array.prototype.forEach.call(entries, function (entry) {
+          if (entry.isIntersecting) {
+            self.observer.unobserve(entry.target);
+            let src = entry.target.getAttribute(self.settings.src);
+            let srcset = entry.target.getAttribute(self.settings.srcset);
+            if ("img" === entry.target.tagName.toLowerCase()) {
+              // Remove all target inline styles
+              entry.target.setAttribute('style', '');
+              if (src) {
+                entry.target.src = src;
+              }
+              if (srcset) {
+                entry.target.srcset = srcset;
+              }
+            } else {
+              entry.target.style.backgroundImage = "url(" + src + ")";
+            }
+          }
+        });
+      }, observerConfig);
+
+      Array.prototype.forEach.call(this.images, function (image) {
+        self.observer.observe(image);
+      });
+    }
+    
+    new LazyLoad(images, {
       root: null,
       rootMargin: '50%',
       threshold: 0
