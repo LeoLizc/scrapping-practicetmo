@@ -4,9 +4,9 @@ import express from 'express';
 import morgan from 'morgan';
 import { cleanAndInject, getHTML, getHTMLID } from './scrapping.js';
 
-import { examplehtml } from './examplehtml.js'
 import { imageInstance } from './axios.js';
 import cors from 'cors';
+import compression from 'compression';
 
 const app = express();
 const PORT = 3000;
@@ -20,13 +20,10 @@ app.use(cors({
 
 }));
 
-/** 
- * Función simulada para obtener HTML por id
- * @param {string} id
-*/
-function getHTMLMock(id) {
-  return examplehtml;
-}
+app.use(compression({
+  threshold: 0, // Habilita compresión para todas las respuestas
+  level: 9,     // Máximo nivel de compresión
+}));
 
 app.get('/viewer', (req, res) => {
   res.send('Hello World!');
