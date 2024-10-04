@@ -1,14 +1,16 @@
+import config from "./config";
+
 export async function getHTMLID(id) {
   try {
     const fetchOptions = {
       method: 'GET',
       headers: {
         'Content-Type': 'text/html',
-        Referer: 'https://zonatmo.com',
+        Referer: config.webDomain,
       },
     }
 
-    const response = await fetch(`https://zonatmo.com/view_uploads/${id}`, fetchOptions);
+    const response = await fetch(`${config.webDomain}/view_uploads/${id}`, fetchOptions);
 
     if (response.status < 200 || response.status >= 300) {
       throw new Error(`Failed to fetch HTML with status ${response.status}`);
@@ -22,14 +24,14 @@ export async function getHTMLID(id) {
     const ogUrlMatch = htmlString.match(/<meta property="og:url" content="([^"]+)"\/?>/);
     const ogUrl = ogUrlMatch ? ogUrlMatch[1] : '';
 
-    if (ogUrl.startsWith('https://zonatmo.com/viewer')) {
+    if (ogUrl.startsWith(`${config.webDomain}/viewer`)) {
       console.log('caso 1')
       // Extract the id from the URL
       const sections = ogUrl.split('/');
       const id = sections[sections.length - 2];
 
       return id;
-    } else if (ogUrl.startsWith('https://zonatmo.com/view_uploads')) {
+    } else if (ogUrl.startsWith(`${config.webDomain}/view_uploads`)) {
       console.log('caso 2')
       const id = extractUniqid(htmlString);
 
