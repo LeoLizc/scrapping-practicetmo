@@ -51,7 +51,7 @@ export const examplehtml = `
             TuMangaOnline
     ">
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://visortmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/paginated">
+<meta property="og:url" content="https://zonatmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/paginated">
 <meta property="og:title" content="    SPY×FAMILY  - Capítulo 99.00  Misión: 99  - Fstake Sukyan -
             TuMangaOnline
     ">
@@ -258,17 +258,17 @@ export const examplehtml = `
         <header>
     <nav class="navbar navbar-fixed-top navbar-light bg-light px-0">
         <div class="row d-flex flex-row justify-content-center m-0 mx-auto col-12">
-            <a class="col-8 col-md-3 navbar-brand text-center" href="https://visortmo.com">
+            <a class="col-8 col-md-3 navbar-brand text-center" href="https://zonatmo.com">
                 TU<b>MANGA</b><i>ONLINE</i>
             </a>
             <div class="d-inline px-1">
                 <a class="nav-link" href="#" id="toggleLightDarkBtn" data-theme="light" title="Modo nocturno"><i class="fas fa-eye fa-fw"></i><span id="toggleLightDarkIcon"><i class="fas fa-toggle-off fa-fw"></i></span></a>
             </div>
             <div class="d-inline px-1">
-                <a class="nav-link" href="https://visortmo.com/library/manga/2980/spyxfamily" title="Volver"><i class="far fa-arrow-alt-circle-left fa-fw"></i> <span class="d-none d-md-inline">Volver</span></a>
+                <a class="nav-link" href="https://zonatmo.com/library/manga/2980/spyxfamily" title="Volver"><i class="far fa-arrow-alt-circle-left fa-fw"></i> <span class="d-none d-md-inline">Volver</span></a>
             </div>
             <div class="d-inline px-1">
-                <a class="nav-link" href="https://visortmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/cascade" title="Cascada"><i class="far fa-copy fa-fw"></i> <span class="d-none d-md-inline">Cascada</span></a>
+                <a class="nav-link" href="https://zonatmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/cascade" title="Cascada"><i class="far fa-copy fa-fw"></i> <span class="d-none d-md-inline">Cascada</span></a>
             </div>
             <div class="d-inline px-1">
                 <a class="nav-link" href="#" id="fullWidthBtn" title="Ancho"><i class="fas fa-fw fa-expand"></i> <span class="d-none d-md-inline">Ancho</span></a>
@@ -284,7 +284,7 @@ export const examplehtml = `
         <div class="col-12">
             <h1>SPY×FAMILY</h1>
             <h2> Capítulo 99.00  Subido por
-                                    <a href="https://visortmo.com/groups/7371/fstake-sukyan">Fstake Sukyan</a>
+                                    <a href="https://zonatmo.com/groups/7371/fstake-sukyan">Fstake Sukyan</a>
                             </h2>
             <h4 class="no-margin">
                                     <i class="fa fa-arrow-left fa-animated-right"></i>&nbsp;<i class="fa fa-arrow-left fa-animated-right"></i>&nbsp;&nbsp;<b>MANGA</b>. Sentido de lectura: De derecha a izquierda&nbsp;&nbsp;<i class="fa fa-arrow-left fa-animated-right"></i>&nbsp;<i class="fa fa-arrow-left fa-animated-right"></i>
@@ -295,8 +295,8 @@ export const examplehtml = `
             <div class="pbk my-2 pbk_t text-center col-12 col-md-8 offset-md-2">
         <div class="row">
             <div class="col-12 col-md-4 offset-md-4">
-                <div class="OUTBRAIN" data-src="https://visortmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/paginated" data-widget-id="TR_1"></div>
-                <div class="OUTBRAIN" data-src="https://visortmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/paginated" data-widget-id="AR_6"></div>
+                <div class="OUTBRAIN" data-src="https://zonatmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/paginated" data-widget-id="TR_1"></div>
+                <div class="OUTBRAIN" data-src="https://zonatmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/paginated" data-widget-id="AR_6"></div>
             </div>
         </div>
         <div class="row">
@@ -394,12 +394,12 @@ export const examplehtml = `
 </div>    
         <div class="pbk my-2 pbk_m1 text-center col-12 col-md-8 offset-md-2">
         <div style="margin-bottom: 25px">
-            <div class="OUTBRAIN" data-src="https://visortmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/paginated" data-widget-id="AR_8"></div>
+            <div class="OUTBRAIN" data-src="https://zonatmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/paginated" data-widget-id="AR_8"></div>
             <br>
             <script async src="https://cdn.unibots.in/genericcube/script_test.js"></script>
             <script>
                 window.unibotsDirectAds = window.unibotsDirectAds || { cmd: [] };
-                unibotsDirectAds.cmd.push("visortmo");
+                unibotsDirectAds.cmd.push("zonatmo");
             </script>
             <div id="unibots-direct_1x1"></div>
         </div>
@@ -407,32 +407,32 @@ export const examplehtml = `
     <section class="container-fluid text-center bg-manga">
     <div class="d-flex flex-row row align-items-center">
         <div class="col-6 col-sm-2 order-1 order-sm-1 chapter-arrow chapter-prev">
-                            <a href="https://visortmo.com/view_uploads/1453200">
+                            <a href="https://zonatmo.com/view_uploads/1453200">
                     <i class="fas fa-backward fa-2x"></i> <small class="d-block">Cap. Anterior</small>
                 </a>
                     </div>
         <div class="order-3 order-sm-2 col-12 col-sm-8">
-            <a class="social-share btn btn-xs btn-social btn-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fvisortmo.com%2Fviewer%2Fc11aeb29fb4e16274f720ed3e348d001%2Fpaginated"
+            <a class="social-share btn btn-xs btn-social btn-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fzonatmo.com%2Fviewer%2Fc11aeb29fb4e16274f720ed3e348d001%2Fpaginated"
                target="_blank">
                 <i class="fab fa-facebook-f fa-fw"></i> Compartir
             </a>
-            <a class="social-share btn btn-xs btn-social btn-twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fvisortmo.com%2Fviewer%2Fc11aeb29fb4e16274f720ed3e348d001%2Fpaginated&title=SPY×FAMILY"
+            <a class="social-share btn btn-xs btn-social btn-twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fzonatmo.com%2Fviewer%2Fc11aeb29fb4e16274f720ed3e348d001%2Fpaginated&title=SPY×FAMILY"
                target="_blank">
                 <i class="fab fa-twitter fa-fw"></i> Compartir
             </a>
-            <a class="social-share btn btn-xs btn-social btn-vkontakte" href="http://vk.com/share.php?url=https%3A%2F%2Fvisortmo.com%2Fviewer%2Fc11aeb29fb4e16274f720ed3e348d001%2Fpaginated&title=SPY×FAMILY"
+            <a class="social-share btn btn-xs btn-social btn-vkontakte" href="http://vk.com/share.php?url=https%3A%2F%2Fzonatmo.com%2Fviewer%2Fc11aeb29fb4e16274f720ed3e348d001%2Fpaginated&title=SPY×FAMILY"
                target="_blank">
                 <i class="fab fa-vk fa-fw"></i> Compartir
             </a>
-            <a class="social-share btn btn-xs btn-social btn-telegram" href="https://t.me/share/url?url=https%3A%2F%2Fvisortmo.com%2Fviewer%2Fc11aeb29fb4e16274f720ed3e348d001%2Fpaginated&text=SPY×FAMILY"
+            <a class="social-share btn btn-xs btn-social btn-telegram" href="https://t.me/share/url?url=https%3A%2F%2Fzonatmo.com%2Fviewer%2Fc11aeb29fb4e16274f720ed3e348d001%2Fpaginated&text=SPY×FAMILY"
                target="_blank">
                 <i class="fab fa-telegram-plane fa-fw"></i> Compartir
             </a>
-            <a class="social-share btn btn-xs btn-social btn-whatsapp" href="https://api.whatsapp.com/send?text=https%3A%2F%2Fvisortmo.com%2Fviewer%2Fc11aeb29fb4e16274f720ed3e348d001%2Fpaginated"
+            <a class="social-share btn btn-xs btn-social btn-whatsapp" href="https://api.whatsapp.com/send?text=https%3A%2F%2Fzonatmo.com%2Fviewer%2Fc11aeb29fb4e16274f720ed3e348d001%2Fpaginated"
                target="_blank">
                 <i class="fab fa-whatsapp fa-fw"></i> Compartir
             </a>
-            <button class="btn btn-xs btn-social btn-primary" onclick="copyToClipboard('https://visortmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/paginated');return false;">
+            <button class="btn btn-xs btn-social btn-primary" onclick="copyToClipboard('https://zonatmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/paginated');return false;">
                 <i class="fas fa-link fa-fw"></i> Compartir
             </button>
             <script>
@@ -459,7 +459,7 @@ export const examplehtml = `
             </script>
         </div>
         <div class="col-6 col-sm-2 order-2 order-sm-3 chapter-arrow chapter-next">
-                            <a href="https://visortmo.com/view_uploads/1469628">
+                            <a href="https://zonatmo.com/view_uploads/1469628">
                     <i class="fas fa-forward fa-2x"></i> <small class="d-block">Cap. Siguiente</small>
                 </a>
                     </div>
@@ -469,10 +469,10 @@ export const examplehtml = `
     <nav class="navbar navbar-fixed-top navbar-light bg-light px-0">
         <div class="row d-flex flex-row justify-content-center m-0 mx-auto col-12">
             <div class="d-inline px-2">
-                <a class="nav-link" href="https://visortmo.com" title="Inicio"><i class="fas fa-home fa-fw"></i> <span class="d-none d-md-inline">Inicio</span></a>
+                <a class="nav-link" href="https://zonatmo.com" title="Inicio"><i class="fas fa-home fa-fw"></i> <span class="d-none d-md-inline">Inicio</span></a>
             </div>
             <div class="d-inline px-2">
-                <a class="nav-link" href="https://visortmo.com/library/manga/2980/spyxfamily" title="Volver"><i class="far fa-arrow-alt-circle-left fa-fw"></i> <span class="d-none d-md-inline">Volver</span></a>
+                <a class="nav-link" href="https://zonatmo.com/library/manga/2980/spyxfamily" title="Volver"><i class="far fa-arrow-alt-circle-left fa-fw"></i> <span class="d-none d-md-inline">Volver</span></a>
             </div>
                             <div class="d-inline px-2">
                     <a class="nav-link" href="https://drive.google.com/file/d/1adgtC5BaT6pb2GEJpm17h9iR4H-8GqQo/view?usp=drive_link" title="Descarga" target="_blank"><i class="fas fa-cloud-download-alt fa-fw"></i> <span class="d-none d-md-inline">Descarga</span></a>
@@ -494,7 +494,7 @@ export const examplehtml = `
 
             </div>
         </div>
-        <div class="OUTBRAIN" data-src="https://visortmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/paginated" data-widget-id="AR_7"></div>
+        <div class="OUTBRAIN" data-src="https://zonatmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/paginated" data-widget-id="AR_7"></div>
 
     </div>
         <div class="container">
@@ -504,7 +504,7 @@ export const examplehtml = `
         </div>
         
             <div class="pbk my-2 pbk_b text-center">
-        <div class="OUTBRAIN" data-src="https://visortmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/paginated" data-widget-id="AR_7"></div>
+        <div class="OUTBRAIN" data-src="https://zonatmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/paginated" data-widget-id="AR_7"></div>
 
         <div id="movie_video"></div><script type="text/javascript" src="https://21wiz.com/s.js?v=20cc3ff22a8255c27c236222507dbc11" async></script>
     </div>
@@ -516,7 +516,7 @@ export const examplehtml = `
         <script type="text/javascript">{ let s = document.createElement("script"); s.setAttribute("async", true); s.setAttribute("src", "https://fstatic.netpub.media/static/c9ebb7cc001cc199109fd9d5500b4705.min.js?"+Date.now()); document.querySelector("head").appendChild(s); }</script>
         <ins class="adv-c9ebb7cc001cc199109fd9d5500b4705" data-sizes-desktop="200x200,250x250,300x250,336x280" data-sizes-mobile="200x200,250x250,300x250,336x280" data-slot="4"></ins>
 
-        <div class="OUTBRAIN" data-src="https://visortmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/paginated" data-widget-id="GS_6"></div>
+        <div class="OUTBRAIN" data-src="https://zonatmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/paginated" data-widget-id="GS_6"></div>
     </div>
             
                 <div class="pbk my-2 pbk_l_mid text-center">
@@ -529,7 +529,7 @@ export const examplehtml = `
         <script async src="https://cdn.unibots.in/genericcube/script_test.js"></script>
         <script>
             window.unibotsDirectAds = window.unibotsDirectAds || { cmd: [] };
-            unibotsDirectAds.cmd.push("visortmo");
+            unibotsDirectAds.cmd.push("zonatmo");
         </script>
         <div id="unibots-direct_1x3"></div>
     </div>
@@ -547,8 +547,8 @@ export const examplehtml = `
                 <h5 class="modal-title" id="reportModalLabel">Reportar elemento</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
-            <form method="POST" action="https://visortmo.com/reports/1460524/upload" accept-charset="UTF-8" class="form-horizontal-edit" id="form-report"><input name="_method" type="hidden" value="PUT"><input name="_token" type="hidden" value="lfr0cRHBL7CqiKkWEtpJK8zbcgvA6b4Gwmx6fzZ5">
-                            <input name="host" type="hidden" value="F42 | visortmo.com">
+            <form method="POST" action="https://zonatmo.com/reports/1460524/upload" accept-charset="UTF-8" class="form-horizontal-edit" id="form-report"><input name="_method" type="hidden" value="PUT"><input name="_token" type="hidden" value="lfr0cRHBL7CqiKkWEtpJK8zbcgvA6b4Gwmx6fzZ5">
+                            <input name="host" type="hidden" value="F42 | zonatmo.com">
                         <div class="modal-body">
                 <div class="form-group row">
                     <label for="type" class="control-label col-xs-12 col-sm-3">Tipo</label>
@@ -669,12 +669,12 @@ export const examplehtml = `
             }
         }
         function goNextPage(){
-                            window.location.href = encodeURI('https://visortmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/paginated/2');
+                            window.location.href = encodeURI('https://zonatmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/paginated/2');
                     }
         function goPrevPage(){
                     }
         function goToPage(object){
-            var url_go_page = 'https://visortmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/paginated/:SELECTED';
+            var url_go_page = 'https://zonatmo.com/viewer/c11aeb29fb4e16274f720ed3e348d001/paginated/:SELECTED';
             var selected = object.options[object.selectedIndex].value;
             window.location.href = url_go_page.replace(':SELECTED',selected);
         }
@@ -839,12 +839,12 @@ export const exampleInjectedJS = `
             }
         }
         /*function goNextPage(){
-                            window.location.href = encodeURI('https://visortmo.com/viewer/'+id+'/paginated/2');
+                            window.location.href = encodeURI('https://zonatmo.com/viewer/'+id+'/paginated/2');
                     }
         function goPrevPage(){
                     }
         function goToPage(object){
-            var url_go_page = 'https://visortmo.com/viewer/'+id+'/paginated/:SELECTED';
+            var url_go_page = 'https://zonatmo.com/viewer/'+id+'/paginated/:SELECTED';
             var selected = object.options[object.selectedIndex].value;
             window.location.href = url_go_page.replace(':SELECTED',selected);
         }*/

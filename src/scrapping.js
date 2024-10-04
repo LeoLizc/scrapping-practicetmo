@@ -25,13 +25,13 @@ export async function getHTMLID(id) {
     const ogUrlMatch = htmlString.match(/<meta property="og:url" content="([^"]+)"\/?>/);
     const ogUrl = ogUrlMatch ? ogUrlMatch[1] : '';
 
-    if (ogUrl.startsWith('https://visortmo.com/viewer')) {
+    if (ogUrl.startsWith('https://zonatmo.com/viewer')) {
       // Extract the id from the URL
       const sections = ogUrl.split('/');
       const id = sections[sections.length - 2];
 
       return id;
-    } else if (ogUrl.startsWith('https://visortmo.com/view_uploads')) {
+    } else if (ogUrl.startsWith('https://zonatmo.com/view_uploads')) {
       const id = extractUniqid(htmlString);
 
       if (id) {
@@ -71,7 +71,7 @@ export async function cleanAndInject(htmlString) {
   document.body.appendChild(newScript);
 
   // Convertir rutas relativas en absolutas (prefijando con 'http://localhost:3000')
-  const baseURL = 'https://visortmo.com';
+  const baseURL = 'https://zonatmo.com';
 
   // Procesar atributos href y src
   ['a[href]', 'img[src]', 'link[href]', 'script[src]'].forEach(selector => {
@@ -195,7 +195,7 @@ export async function cleanAndInject(htmlString) {
   for (let i = 0; i < anchors.length; i++) {
     let anchor = anchors[i];
     let url = anchor.getAttribute('href');
-    if (url && url.startsWith('https://visortmo.com/view_uploads')) {
+    if (url && url.startsWith('https://zonatmo.com/view_uploads')) {
       const id = url.split('/').pop();
       const newId = await getHTMLID(id ?? '');
 
