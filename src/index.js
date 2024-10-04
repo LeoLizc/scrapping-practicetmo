@@ -1,4 +1,4 @@
-//@ts-check
+//@/ts-check
 
 import express from 'express';
 import morgan from 'morgan';
@@ -8,6 +8,9 @@ import { imageInstance } from './axios.js';
 import cors from 'cors';
 import compression from 'compression';
 
+import { checkReferer } from './middlewares.js';
+import config from './config.js';
+
 const app = express();
 const PORT = 3000;
 
@@ -16,8 +19,13 @@ app.use(morgan('dev'));
 
 // Use CORS
 app.use(cors({
-  origin: '*',
-
+  origin: (origin, callback) => {
+    if (!origin || origin === config.myDomain) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
 }));
 
 app.use(compression({
@@ -77,7 +85,7 @@ app.get('/clear/:id', async (req, res) => {
 
 // - ------------------------------------IMAGE SECTION-----------------------------------
 
-app.get('/image/:date/:idPage/:id', async (req, res) => {
+app.get('/image/:date/:idPage/:id', checkReferer, async (req, res) => {
   const imageId = req.params.id;
   const date = req.params.date;
   const pageId = req.params.idPage;
