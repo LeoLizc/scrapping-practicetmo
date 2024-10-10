@@ -12,7 +12,7 @@ import { checkReferer } from './middlewares.js';
 import config from './config.js';
 
 const app = express();
-const PORT = 3000;
+const PORT = config.port;
 
 // Use morgan for logging
 app.use(morgan('dev'));
@@ -85,7 +85,7 @@ app.get('/clear/:id', async (req, res) => {
 
 // - ------------------------------------IMAGE SECTION-----------------------------------
 
-app.get('/image/:date/:idPage/:id', checkReferer, async (req, res) => {
+app.get('/image/:date/:idPage/:id', /**/checkReferer,/**/ async (req, res) => {
   const imageId = req.params.id;
   const date = req.params.date;
   const pageId = req.params.idPage;
