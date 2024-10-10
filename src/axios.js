@@ -8,7 +8,7 @@ const CLEAR_SERVICE_URL = `${config.webDomain}/view_uploads`; // Cambia esto a l
 const HTML_SERVICE_URL = `${config.webDomain}/viewer`; // Cambia esto a la URL real
 
 export const imageInstance = axios.create({
-  adapter,
+  // adapter,
   httpsAgent: new https.Agent({
     rejectUnauthorized: false
   }),
