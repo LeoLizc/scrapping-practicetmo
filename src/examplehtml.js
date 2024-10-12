@@ -808,13 +808,13 @@ export const examplehtml = `
 </body>
 </html>`
 
-export const exampleInjectedJS = `
+export const exampleInjectedJS = (id) => `
         var redirecting = false;
         var disqus_shortname = "tumangaonline";
         const urlSections = window.location.pathname.split('/');
         const id = urlSections[urlSections.length - 1];
         var disqus_config = function () {
-                            this.page.identifier = "TMOUpload_"+id;
+                            this.page.identifier = ${id? `"${id}"` : '"TMOUpload_"+id'};
                     };
         var is_disqus_loaded = false;
         var fullScreenMode = false;
