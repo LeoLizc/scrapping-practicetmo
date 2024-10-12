@@ -8,6 +8,7 @@ export const config = Object.freeze({
   webDomainName: process.env.WEB_DOMAIN_NAME || 'zonatmo',
   imgDomain: process.env.IMG_DOMAIN || 'https://imgtmo.com',
   port: process.env.PORT || 3000,
+  jwtSecret: process.env.JWT_SECRET || 'secret',
 });
 
 export default config;
