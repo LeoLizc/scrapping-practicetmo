@@ -4,6 +4,7 @@ import { JSDOM } from 'jsdom';
 import { exampleInjectedJS } from './examplehtml.js';
 import { clearInstance, htmlInstance } from './axios.js';
 import config from './config.js';
+import { extractDisqusIdentifier } from './utils.js';
 
 /**
  * 
@@ -54,6 +55,7 @@ function extractUniqid(html) {
 
 // Función para limpiar el HTML, eliminar <script> e <iframe> e inyectar el alert
 export async function cleanAndInject(htmlString) {
+  const disqusId = extractDisqusIdentifier(htmlString);
   const dom = new JSDOM(htmlString);
   const document = dom.window.document;
 
@@ -68,7 +70,7 @@ export async function cleanAndInject(htmlString) {
   // Inyectar un script
   const newScript = document.createElement('script');
   newScript.type = 'text/javascript';
-  newScript.textContent = exampleInjectedJS;
+  newScript.textContent = exampleInjectedJS(disqusId);
   document.body.appendChild(newScript);
 
   // Convertir rutas relativas en absolutas (prefijando con 'http://localhost:3000')
