@@ -86,7 +86,7 @@ apiRouter.get('/clear/:id', async (req, res) => {
   const id = req.params.id;
 
   const idClean = await getHTMLID(id);
-  res.send(idClean);
+  res.json(idClean)
 });
 
 apiRouter.get('/navigate', async (req, res) => {
