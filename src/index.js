@@ -73,8 +73,8 @@ app.get('/viewer/:id', async (req, res) => {
   res.send(cleanedHtml);
 });
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+app.get('/status', (_, res) => {
+  res.send('working');
 });
 
 // - ------------------------------------CLEAR SECTION-----------------------------------

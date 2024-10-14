@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      text-wrap: balance;
+    }
+
+    .modal {
+      background-color: #343a40;
+      padding: 25px;
+      border-radius: 30px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+      /* width: 800px;
+      height: 400px; */
+      width: 50rem;
+      max-width: 90%;
+      height: 20rem;
+      max-height: 90%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .background {
+      background-image: url('images/tmo_background.avif');
+      background-size: cover;
+      background-position: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      /* gap: 15px; */
+
+      width: 100%;
+      height: 100%;
+    }
+
+    .insub-wrapper {
+      width: 100%;
+      position: relative;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      /* margin: 10px 0; */
+      border-radius: 5px;
+      border: none;
+      height: 50px;
+
+      /* Text styles */
+      font-size: 1.5rem;
+    }
+
+    .input-button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 50px;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      border-radius: 3px;
+
+      transition: background-color 0.2s;
+    }
+
+    .input-button:hover {
+      background-color: hsl(211, 100%, 43%);
+    }
+
+    h1 {
+      color: #2957ba;
+      text-shadow: -2px 2px 10px rgb(0 0 0 / 65%);
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="modal">
+    <form class="form" action="/navigate">
+      <h1>
+        Ingresa la URL de TMO:
+      </h1>
+      <div class="insub-wrapper">
+        <input type="url" name="url" id="url" placeholder="URL de TMO" required>
+        <button
+          type="submit"
+          class="input-button"
+        >
+        ➡️
+      </button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
