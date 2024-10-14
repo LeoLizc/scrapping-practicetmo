@@ -82,7 +82,7 @@ app.get('/status', (_, res) => {
 
 // - ------------------------------------CLEAR SECTION-----------------------------------
 
-apiRouter.get('/clear/:id', async (req, res) => {
+apiRouter.get('/clear/:id', checkReferer, async (req, res) => {
   const id = req.params.id;
 
   const idClean = await getHTMLID(id);

@@ -13,7 +13,11 @@
       const maxAttempts = 2;
 
       function fetchNewId() {
-        fetch(`/api/clear/${rawId}`)
+        fetch(`/api/clear/${rawId}`, {
+          headers: {
+            Referer: window.location.href,
+          }
+        })
           .then(response => response.json())
           .then(data => {
             if (data) {
