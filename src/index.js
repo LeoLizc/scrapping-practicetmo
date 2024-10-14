@@ -33,6 +33,9 @@ app.use(compression({
   level: 9,     // Máximo nivel de compresión
 }));
 
+// Set up static folder
+app.use(express.static('public'));
+
 app.get('/viewer', (req, res) => {
   res.send('Hello World!');
 });
