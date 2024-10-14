@@ -88,6 +88,14 @@ apiRouter.get('/clear/:id', async (req, res) => {
   res.send(idClean);
 });
 
+apiRouter.get('/navigate', async (req, res) => {
+  const { url } = req.query;
+
+  res.send(
+    `You are navigating to: ${url}`
+  );
+});
+
 // - ------------------------------------IMAGE SECTION-----------------------------------
 
 apiRouter.get('/image/:date/:idPage/:id', /**/checkReferer,/**/ async (req, res) => {
