@@ -73,13 +73,15 @@ app.get('/viewer/:id', async (req, res) => {
   res.send(cleanedHtml);
 });
 
+const apiRouter = express.Router();
+
 app.get('/status', (_, res) => {
   res.send('working');
 });
 
 // - ------------------------------------CLEAR SECTION-----------------------------------
 
-app.get('/clear/:id', async (req, res) => {
+apiRouter.get('/clear/:id', async (req, res) => {
   const id = req.params.id;
 
   const idClean = await getHTMLID(id);
@@ -88,7 +90,7 @@ app.get('/clear/:id', async (req, res) => {
 
 // - ------------------------------------IMAGE SECTION-----------------------------------
 
-app.get('/image/:date/:idPage/:id', /**/checkReferer,/**/ async (req, res) => {
+apiRouter.get('/image/:date/:idPage/:id', /**/checkReferer,/**/ async (req, res) => {
   const imageId = req.params.id;
   const date = req.params.date;
   const pageId = req.params.idPage;
@@ -111,6 +113,8 @@ app.get('/image/:date/:idPage/:id', /**/checkReferer,/**/ async (req, res) => {
   }
 });
 
+
+app.use('/api', apiRouter);
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });

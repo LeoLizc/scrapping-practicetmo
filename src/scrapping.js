@@ -100,7 +100,7 @@ export async function cleanAndInject(htmlString) {
       const imageId = urlParts[urlParts.length - 1];
       const pageId = urlParts[urlParts.length - 2];
       const date = urlParts[urlParts.length - 3];
-      return `/image/${date}/${pageId}/${imageId}`;
+      return `/api/image/${date}/${pageId}/${imageId}`;
     }
 
     return null;
