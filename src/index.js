@@ -10,6 +10,7 @@ import compression from 'compression';
 
 import { checkReferer } from './middlewares.js';
 import config from './config.js';
+import { extractTMOId } from './utils.js';
 
 const app = express();
 const PORT = config.port;
@@ -91,9 +92,14 @@ apiRouter.get('/clear/:id', async (req, res) => {
 apiRouter.get('/navigate', async (req, res) => {
   const { url } = req.query;
 
-  res.send(
-    `You are navigating to: ${url}`
-  );
+  const id = extractTMOId(url);
+
+  if (!id) {
+    res.status(400).send('URL inválida');
+    return
+  }
+
+  res.redirect(`/viewer/${id}`);
 });
 
 // - ------------------------------------IMAGE SECTION-----------------------------------
