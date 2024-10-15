@@ -1,113 +1,27 @@
-//@/ts-check
+import app from './app.js';
+import http from 'http';
+import https from 'https';
+import fs from 'fs';
 
-import express from 'express';
-import morgan from 'morgan';
-import { cleanAndInject, getHTML, getHTMLID } from './scrapping.js';
-
-import { imageInstance } from './axios.js';
-import cors from 'cors';
-import compression from 'compression';
-
-import { checkReferer } from './middlewares.js';
 import config from './config.js';
 
-const app = express();
-const PORT = config.port;
+const httpServer = http.createServer(app);
 
-// Use morgan for logging
-app.use(morgan('dev'));
-
-// Use CORS
-app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || origin === config.myDomain) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-}));
-
-app.use(compression({
-  threshold: 0, // Habilita compresión para todas las respuestas
-  level: 9,     // Máximo nivel de compresión
-}));
-
-app.get('/viewer', (req, res) => {
-  res.send('Hello World!');
+httpServer.listen(config.port, () => {
+  console.log(`Server running on port ${config.port}`);
 });
 
-app.get('/viewer/:id/paginated', (req, res) => {
-  const id = req.params.id;
+if (
+  config.ssl
+  && config.ssl.key
+  && config.ssl.cert
+) {
+  const httpsServer = https.createServer({
+    key: fs.readFileSync(config.ssl.key),
+    cert: fs.readFileSync(config.ssl.cert),
+  }, app);
 
-  // redirigir a la la misma url sin /paginated
-  res.redirect(`/viewer/${id}`);
-});
-
-app.get('/viewer/:id/cascade', (req, res) => {
-  const id = req.params.id;
-
-  // redirigir a la la misma url sin /paginated
-  res.redirect(`/viewer/${id}`);
-});
-
-// Endpoint que recibe un id y sirve el HTML limpio
-app.get('/viewer/:id', async (req, res) => {
-  const id = req.params.id;
-
-  // Obtener el HTML utilizando la función getHTML
-  const htmlString = await getHTML(id);
-
-  if (!htmlString) {
-    res.status(404).send('No se encontró el HTML');
-    return;
-  }
-
-  // Limpiar el HTML e inyectar el script
-  const cleanedHtml = await cleanAndInject(htmlString);
-
-  // Enviar el HTML limpio como respuesta
-  res.send(cleanedHtml);
-});
-
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
-
-// - ------------------------------------CLEAR SECTION-----------------------------------
-
-app.get('/clear/:id', async (req, res) => {
-  const id = req.params.id;
-
-  const idClean = await getHTMLID(id);
-  res.send(idClean);
-});
-
-// - ------------------------------------IMAGE SECTION-----------------------------------
-
-app.get('/image/:date/:idPage/:id', /**/checkReferer,/**/ async (req, res) => {
-  const imageId = req.params.id;
-  const date = req.params.date;
-  const pageId = req.params.idPage;
-
-  try {
-    const response = await imageInstance.get(`/${date}/${pageId}/${imageId}`, {
-      responseType: 'stream'
-    });
-
-    // Configura el encabezado de respuesta
-    res.set('Content-Type', response.headers['content-type'] || 'image/webp');
-    res.set('Content-Length', response.headers['content-length']);
-
-    // Envía la imagen al cliente
-    // res.send(response.data);
-    response.data.pipe(res);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Error al obtener la imagen');
-  }
-});
-
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+  httpsServer.listen(config.ssl.port, () => {
+    console.log(`Server running on port ${config.ssl.port}`);
+  });
+}

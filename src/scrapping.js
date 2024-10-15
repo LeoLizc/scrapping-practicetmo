@@ -9,7 +9,7 @@ import { extractDisqusIdentifier } from './utils.js';
 /**
  * 
  * @param {string} id 
- * @returns {Promise<string>}
+ * @returns {Promise<string | null>}
  */
 export async function getHTMLID(id) {
   try {
@@ -44,7 +44,7 @@ export async function getHTMLID(id) {
   } catch (error) {
     console.error(error);
   }
-  return 'nose';
+  return null;
 }
 
 function extractUniqid(html) {
@@ -100,7 +100,7 @@ export async function cleanAndInject(htmlString) {
       const imageId = urlParts[urlParts.length - 1];
       const pageId = urlParts[urlParts.length - 2];
       const date = urlParts[urlParts.length - 3];
-      return `/image/${date}/${pageId}/${imageId}`;
+      return `/api/image/${date}/${pageId}/${imageId}`;
     }
 
     return null;
@@ -199,15 +199,27 @@ export async function cleanAndInject(htmlString) {
     let anchor = anchors[i];
     let url = anchor.getAttribute('href');
     if (url && url.startsWith(`${config.webDomain}/view_uploads`)) {
-      const id = url.split('/').pop();
+      const id = url.slice(`${config.webDomain}/view_uploads`.length + 1).split('/')[0];
       const newId = await getHTMLID(id ?? '');
 
       if (newId) {
         anchor.setAttribute('href', `/viewer/${newId}`);
+      } else {
+        anchor.setAttribute('href', '#');
+        anchor.toggleAttribute('x-failed');
+        anchor.setAttribute('raw-id', id);
       }
     }
   }
 
+  const viewerScript = document.createElement('script');
+  viewerScript.src = '/scripts/viewer.js';
+  document.body.appendChild(viewerScript);
+
+  const viewerStyle = document.createElement('link');
+  viewerStyle.rel = 'stylesheet';
+  viewerStyle.href = '/styles/viewer.css';
+  document.head.appendChild(viewerStyle);
 
   return document.documentElement.outerHTML;
 }

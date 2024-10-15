@@ -9,6 +9,12 @@ export const config = Object.freeze({
   imgDomain: process.env.IMG_DOMAIN || 'https://imgtmo.com',
   port: process.env.PORT || 3000,
   jwtSecret: process.env.JWT_SECRET || 'secret',
+
+  ssl: {
+    key: process.env.SSL_KEY || '',
+    cert: process.env.SSL_CERT || '',
+    port: process.env.SSL_PORT || 3443,
+  }
 });
 
 export default config;
