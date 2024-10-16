@@ -1,12 +1,12 @@
 import config from "./config.js";
 import jwt from 'jsonwebtoken';
 
-const myDomain = config.myDomain;
+const myDomains = config.myDomains;
 
 const checkReferer = (req, res, next) => {
   const referer = req.get('referer');
   console.log('referer: ', referer);
-  if (referer && referer.startsWith(myDomain)) {
+  if (referer && myDomains.some(domain => referer.startsWith(domain))) {
     next();
   } else {
     res.status(403).send('Forbidden');

@@ -13,7 +13,6 @@ import config from './config.js';
 import { extractTMOId } from './utils.js';
 
 const app = express();
-const PORT = config.port;
 
 // Use morgan for logging
 app.use(morgan('dev'));
@@ -21,7 +20,7 @@ app.use(morgan('dev'));
 // Use CORS
 app.use(cors({
   origin: (origin, callback) => {
-    if (!origin || origin === config.myDomain) {
+    if (!origin || config.myDomains.some(value => value===origin)) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));

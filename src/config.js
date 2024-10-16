@@ -3,7 +3,9 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const config = Object.freeze({
-  myDomain: process.env.MY_DOMAIN || 'http://localhost:3000',
+  myDomains: (process.env.MY_DOMAIN || 'http://localhost:3000')
+    .split(';')
+    .map(domain => domain.trim()),
   webDomain: process.env.WEB_DOMAIN || 'https://zonatmo.com',
   webDomainName: process.env.WEB_DOMAIN_NAME || 'zonatmo',
   imgDomain: process.env.IMG_DOMAIN || 'https://imgtmo.com',
