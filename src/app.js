@@ -58,6 +58,11 @@ app.get('/viewer/:id/cascade', (req, res) => {
 app.get('/viewer/:id', async (req, res) => {
   const id = req.params.id;
 
+  if (!id) {
+    res.status(400).send('ID no proporcionado');
+    return;
+  }
+
   // Obtener el HTML utilizando la función getHTML
   const htmlString = await getHTML(id);
 
@@ -84,12 +89,22 @@ app.get('/status', (_, res) => {
 apiRouter.get('/clear/:id', checkReferer, async (req, res) => {
   const id = req.params.id;
 
+  if (!id) {
+    res.status(400).send('ID no proporcionado');
+    return;
+  }
+
   const idClean = await getHTMLID(id);
   res.json(idClean)
 });
 
 apiRouter.get('/navigate', async (req, res) => {
   const { url } = req.query;
+
+  if (!url) {
+    res.status(400).send('URL no proporcionada');
+    return;
+  }
 
   const id = extractTMOId(url);
 
