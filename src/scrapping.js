@@ -216,6 +216,11 @@ export async function cleanAndInject(htmlString) {
   viewerScript.src = '/scripts/viewer.js';
   document.body.appendChild(viewerScript);
 
+  const saveChapScript = document.createElement('script');
+  saveChapScript.src = '/scripts/chapter-saver.js';
+  saveChapScript.type = 'module';
+  document.head.appendChild(saveChapScript);
+
   const viewerStyle = document.createElement('link');
   viewerStyle.rel = 'stylesheet';
   viewerStyle.href = '/styles/viewer.css';
